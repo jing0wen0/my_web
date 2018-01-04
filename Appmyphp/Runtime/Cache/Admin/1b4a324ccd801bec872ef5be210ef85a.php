@@ -74,7 +74,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
   </tr>
   <tr>
     <td align="left" valign="top">
-    <form method="post" action="/admin.php/Case/save/id/8" enctype="multipart/form-data">
+    <form method="post" action="/admin.php/Tiezi/save/id/3" enctype="multipart/form-data">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td width="10%" align="right" valign="middle" class="borderright borderbottom bggray">标题：</td>
@@ -82,22 +82,10 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
         <input type="text" name="title" value="<?php echo ($show['title']); ?>" class="text-word" style="width: 670px;">
         </td>
       </tr>
-      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td width="10%" align="right" valign="middle" class="borderright borderbottom bggray">描述：</td>
-        <td width="90%" align="left" valign="middle" class="borderright borderbottom main-for">
-          <textarea name="description" class="miaoshu"><?php echo ($show['description']); ?></textarea>
-        </td>
-      </tr>
       <tr width="100%" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td width="10%" align="right" valign="middle" class="borderright borderbottom bggray">内容：</td>
         <td width="90%" align="left" valign="middle" class="borderright borderbottom main-for">
           <textarea name="content" id="content" style="width:670px;height:250px;"><?php echo ($show['content']); ?></textarea>
-        </td>
-      </tr>
-      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">缩略图：</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" id="url" name="thumb" value="<?php echo ($show['thumb']); ?>" class="text-word"><input type="button" id="image" value="选择图片"/>
         </td>
       </tr>
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">

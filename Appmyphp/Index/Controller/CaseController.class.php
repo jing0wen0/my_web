@@ -1,7 +1,7 @@
 <?php
 namespace Index\Controller;
 use Think\Controller;
-class CaseController extends Controller {
+class CaseController extends BasicController {
 
     public function case_list(){
         $Case_model = M('Case'); // 实例化Case对象
@@ -12,10 +12,6 @@ class CaseController extends Controller {
         $case_list = $Case_model->order('create_time desc')->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('case_list',$case_list);// 赋值数据集
         $this->assign('page',$show);// 赋值分页输出
-
-        $Tiezi_model = M('Tiezi');
-        $tiezi_list = $Tiezi_model->order('hits desc')->limit(3)->select();
-        $this->assign('tiezi_list',$tiezi_list);
 
         $this->display(); // 输出模板
     }
@@ -29,10 +25,6 @@ class CaseController extends Controller {
 
         $case_rm = $Case_model->order('hits desc')->limit(3)->select();
         $this->assign('case_rm',$case_rm);
-
-        $Tiezi_model = M('Tiezi');
-        $tiezi_list = $Tiezi_model->order('hits desc')->limit(3)->select();
-        $this->assign('tiezi_list',$tiezi_list);
 
         $this->display();
     }

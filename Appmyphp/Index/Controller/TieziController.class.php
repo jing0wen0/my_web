@@ -1,7 +1,7 @@
 <?php
 namespace Index\Controller;
 use Think\Controller;
-class TieziController extends Controller {
+class TieziController extends BasicController {
 
     public function tiezi_list(){
         $Tiezi_model = M('Tiezi'); // 实例化Tiezi对象

@@ -113,11 +113,11 @@
 				<div class="row">
 					<?php if(is_array($case_list)): $i = 0; $__LIST__ = $case_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="col-md-4">
 						<div class="box-item">
-							<img src="<?php echo ($vo['thumb']); ?>" alt="<?php echo ($vo["title"]); ?>" class="img-responsive"/>
+							<img src="<?php echo ($vo['thumb']); ?>" title="<?php echo ($vo["title"]); ?>" class="img-responsive"/>
 							<div class="content">
 								<h3><?php echo (mb_substr($vo["title"],0,12,'utf-8')); ?></h3>
 								<p><?php echo (mb_substr($vo['description'],0,60,'utf-8')); ?></p>
-								<a href="/index.php/Case/case_show/id/<?php echo ($vo['id']); ?>">Read More...</a>
+								<a href="/index.php/Case/case_show/id/<?php echo ($vo['id']); ?>">阅读更多...</a>
 								<br><br>
 								<span><?php echo (date("Y-m-d H:i:s",$vo['create_time'])); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览：<?php echo ($vo['hits']); ?></span><br>
 							</div>

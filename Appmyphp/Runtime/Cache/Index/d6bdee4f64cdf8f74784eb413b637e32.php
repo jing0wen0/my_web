@@ -121,7 +121,7 @@
 							<div class="row">
 								<?php if(is_array($case_rm)): $i = 0; $__LIST__ = $case_rm;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="col-md-4">
 									<div class="wrap-col">
-										<a href="/index.php/Case/case_show/id/<?php echo ($vo['id']); ?>"><img src="<?php echo ($vo['thumb']); ?>" /></a>
+										<a href="/index.php/Case/case_show/id/<?php echo ($vo['id']); ?>" title="<?php echo ($vo['title']); ?>"><img src="<?php echo ($vo['thumb']); ?>" /></a>
 										<h4><a href="/index.php/Case/case_show/id/<?php echo ($vo['id']); ?>"><?php echo ($vo['title']); ?></a></h4>
 									</div>
 								</div><?php endforeach; endif; else: echo "" ;endif; ?>

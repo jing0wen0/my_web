@@ -1,7 +1,7 @@
 <?php
 namespace Index\Controller;
 use Think\Controller;
-class ContactController extends Controller {
+class ContactController extends BasicController {
     public function contact(){
         if(!empty($_POST)){
             $Message_model = M('Message');
