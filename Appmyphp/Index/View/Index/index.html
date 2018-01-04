@@ -1,0 +1,142 @@
+<html>
+<head>
+  <!-- META DATA -->
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<title>烂文的web</title>
+  
+	<!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css"  type="text/css">
+	
+	<!-- Owl Carousel Assets -->
+    <link href="__PUBLIC__/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <!-- <link href="owl-carousel/owl.theme.css" rel="stylesheet"> -->
+	
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css">
+	
+	<!-- Custom Fonts -->
+    <link rel="stylesheet" href="__PUBLIC__/font-awesome-4.4.0/css/font-awesome.min.css"  type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="__PUBLIC__/js/html5shiv.js"></script>
+        <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+	
+</head>
+
+ <body class="index-page">
+
+ 	<include file="Public:header" />
+
+	<!-- CAROUSEL -->
+	<div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel" data-interval="4000">
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="__PUBLIC__/images/banner1.jpg" alt="...">
+				<!-- Static Header -->
+				<div class="container">
+				<div class="header-text hidden-xs">
+					<div class="col-md-12 text-center">
+						<h1>创意网站风格创意，不限次免费更改</h1>
+						<hr>
+						<p>MyWeb作为网站建设行业的领头者，专注与网站建设、网站制作、网站定制开发,拥有丰富的网站建设经验,凭着过硬的实力和服务赢得了广大客户的一致好评.</p>
+						<a href="" class="btn btn-primary btn-xl page-scroll">了解更多</a>
+					</div>
+				</div><!-- /header-text -->
+				</div>
+			</div>
+			<div class="item">
+				<img src="__PUBLIC__/images/banner2.jpg" alt="...">
+				<!-- Static Header -->
+				<div class="header-text hidden-xs">
+					<div class="col-md-12 text-center">
+						<h1>全站网页静态化技术设计</h1>
+						<hr>
+						<p>网站建设皆倾向把动态网页静态化，之后提交百度谷歌等搜索引擎最佳化，即网站优化俗称“伪静态”。</p>
+						<a href="" class="btn btn-primary btn-xl page-scroll">了解更多</a>
+					</div>
+				</div><!-- /header-text -->
+			</div>
+			
+		</div>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div> <!-- Carousel -->
+	
+	<header class="container">
+		<div class="site-branding">
+			<h1 class="site-title">
+				<a href="index.html">
+					<span>case</span>
+				</a>
+			</h1>
+			<h2 class="site-description">案例</h2>
+		</div>
+		<div class="social-links">
+			<ul class="list-inline">
+				<li><a href="javascript:;"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="javascript:;"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="javascript:;"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="javascript:;"><i class="fa fa-vimeo"></i></a></li>
+				<li><a href="javascript:;"><i class="fa fa-rss"></i></a></li>
+			</ul>
+		</div>
+	</header>
+
+	<!-- /////////////////////////////////////////Content -->
+	<div id="page-content">
+	
+		<!-- ////////////Content Box 01 -->
+		<section class="box-content box-1">
+			<div class="container">
+				<div class="row">
+					<volist name="case_list" id="vo" offset="0" length='3'>
+					<div class="col-md-4">
+						<div class="box-item">
+							<img src="<{$vo['thumb']}>" class="img-responsive"/>
+							<div class="content">
+								<h3><{$vo.title|mb_substr=###,0,12,'utf-8'}></h3>
+								<p><{$vo['description']|mb_substr=###,0,60,'utf-8'}></p>
+								<a href="__APP__/Case/case_show/id/<{$vo['id']}>">阅读 更多...</a>
+								<br><br>
+								<span><{$vo['create_time']|date="Y-m-d H:i:s",###}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览：<{$vo['hits']}></span><br>
+							</div>
+						</div>
+					</div>
+					</volist>
+				</div>
+				<div class="guanggao_sy"><a href="" title="广告位招租" target="_blank"><img src="__PUBLIC__/images/gg.jpg"></a></div>
+			</div>
+		</section>
+	</div>
+
+	<include file="Public:footer" />
+  
+	<!-- jQuery -->
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
+	
+	<!-- Custom Theme JavaScript -->
+	<script src="__PUBLIC__/js/agency.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="__PUBLIC__/js/jquery.easing.min.js"></script>
+	<script src="__PUBLIC__/js/classie.js"></script>
+	<script src="__PUBLIC__/js/cbpAnimatedHeader.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+<head>
+  <!-- META DATA -->
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<title><{$show['title']}>-MyWeb</title>
+  
+	<!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css"  type="text/css">
+	
+	<!-- Owl Carousel Assets -->
+    <link href="__PUBLIC__/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <!-- <link href="owl-carousel/owl.theme.css" rel="stylesheet"> -->
+	
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/css/style.css">
+	
+	<!-- Custom Fonts -->
+    <link rel="stylesheet" href="__PUBLIC__/font-awesome-4.4.0/css/font-awesome.min.css"  type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="__PUBLIC__/js/html5shiv.js"></script>
+        <script src="__PUBLIC__/js/respond.min.js"></script>
+    <![endif]-->
+	
+</head>
+
+<body class="sub-page">	
+
+	<include file="Public:header" />
+	
+	<!-- Background Gradients-->
+	<div  class="site-gradients">
+		<div class="site-gradients-media">
+			<figure>
+				<img src="__PUBLIC__/images/figure1920.jpg" alt="" srcset="__PUBLIC__/images/figure1920.jpg 1920w, __PUBLIC__/images/figure420.jpg 420w, __PUBLIC__/images/figure774.jpg 744w, __PUBLIC__/images/figure1200.jpg 1200w" sizes="(max-width: 1617px) 100vw, 1617px" height="1080" width="1617">
+			</figure>
+		</div>
+	</div>
+
+	<header class="container">
+		<div class="site-branding">
+			<h1 class="site-title">
+				<a href="javascript:;">
+					<span>post</span>
+				</a>
+			</h1>
+			<h2 class="site-description">帖子</h2>
+		</div>
+		<div class="social-links">
+			<ul class="list-inline">
+				<li><a href="javascript:;"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="javascript:;"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="javascript:;"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="javascript:;"><i class="fa fa-vimeo"></i></a></li>
+				<li><a href="javascript:;"><i class="fa fa-rss"></i></a></li>
+			</ul>
+		</div>
+	</header>
+	
+	<!-- /////////////////////////////////////////Content -->
+	<div id="page-content" class="single-page">
+		<div class="container">
+			<div class="row">
+				<div id="main-content">
+					<article>
+						<div class="art-content">
+							<h1><{$show['title']}></h1>
+							<div class="info">发布时间：<{$show['create_time']|date="Y-m-d H:i:s",###}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览：<{$show['hits']+1}></div>
+							<div class="excerpt"><p>&nbsp;</p><p><{$show['content']}></p></div>
+						</div>
+					</article>
+					<div class="widget wid-related">
+						<div class="heading"><h4>热门案例</h4></div>
+						<div class="content">
+							<div class="row">
+								<volist name="case_rm" id="vo">
+								<div class="col-md-4">
+									<div class="wrap-col">
+										<a href="__APP__/Case/case_show/id/<{$vo['id']}>"><img src="<{$vo['thumb']}>" /></a>
+										<h4><a href="__APP__/Case/case_show/id/<{$vo['id']}>"><{$vo['title']}></a></h4>
+									</div>
+								</div>
+								</volist>
+							</div>
+						</div>
+					</div>
+					<div class="guanggao"><a href="" title="广告位招租" target="_blank"><img src="__PUBLIC__/images/gg.jpg"></a></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<include file="Public:footer" />
+  
+	<!-- jQuery -->
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/bootstrap.min.js"></script>
+	
+	<!-- Custom Theme JavaScript -->
+	<script src="__PUBLIC__/js/agency.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="__PUBLIC__/js/jquery.easing.min.js"></script>
+	<script src="__PUBLIC__/js/classie.js"></script>
+	<script src="__PUBLIC__/js/cbpAnimatedHeader.js"></script>
+	
+</body>
+</html>

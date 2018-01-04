@@ -1,0 +1,36 @@
+1、引用以下js
+<script type="text/javascript" charset="utf-8" src="kindeditor/kindeditor-all.js"></script>
+<script type="text/javascript" src="kindeditor/lang/zh_CN.js"></script>
+
+2、然后引用以下代码
+<script type="text/javascript">
+	//这里是文本框
+    var editor;
+    KindEditor.ready(function (K) {
+      editor = K.create('textarea[name="content"]', {
+        allowFileManager: true,
+        resiseMode: 1
+      });
+
+      //这里是监听按钮点击事件 然后在初始化点击按钮弹窗上传图片的基本配置
+      K('#image').click(function () {
+        editor.loadPlugin('image', function () {
+          editor.plugin.imageDialog({
+            imageUrl: K('#url').val(),
+            clickFn: function (url, title, width, height, border, align) {
+              K('#url').val(url);
+              editor.hideDialog();
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+3、以下是html代码（重点id）：
+文本框：
+<textarea name="content" id="content" style="width:670px;height:250px;"></textarea>
+
+文件上传
+<input type="text" id="url" name="thumb" value="" class="text-word">
+<input type="button" id="image" value="选择图片"/>
