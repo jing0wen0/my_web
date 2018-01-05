@@ -17,7 +17,7 @@
         <td align="left" valign="bottom" id="header-name">MyWeb</td>
         <td align="right" valign="top" id="header-right">
         	<a href="/admin.php/Login/logout" target="top" class="admin-out">注销</a>
-          <a href="/admin.php/Index/index" target="top" class="admin-home">管理首页</a>
+          <a href="javascript:;" onFocus="this.blur()" class="admin-home" id="hc">更新缓存</a>
         	<a href="/" target="_blank" onFocus="this.blur()" class="admin-index">网站首页</a>
             <span>
 <!-- 日历 -->
@@ -34,7 +34,7 @@
         <tr>
           <td align="left" valign="top" id="header-admin">后台管理系统</td>
           <td align="left" valign="bottom" id="header-menu">
-          <a href="main.html" target="mainFrame"  id="a_0" onFocus="this.blur()" onclick="javascript:gourl('0','main.html')" class="on">后台首页</a>
+          <a href="main.html" target="mainFrame"  id="a_0" onFocus="this.blur()" onclick="gourl('0','main.html')" class="on">后台首页</a>
           <a href="<?php echo U('Rbac/user');?>" target="mainFrame" id="a_1" onFocus="this.blur()" onclick="javascript:gourl('1','<?php echo U('Rbac/user');?>')">用户管理</a>
           <a href="<?php echo U('Rbac/role');?>" target="mainFrame" id="a_2" onFocus="this.blur()" onclick="javascript:gourl('2','<?php echo U('Rbac/role');?>')">角色管理</a>
           <a href="<?php echo U('Rbac/node');?>" target="mainFrame" id="a_3" onFocus="this.blur()" onclick="javascript:gourl('3','<?php echo U('Rbac/node');?>')">节点管理</a>
@@ -48,11 +48,26 @@
   </tr>
 </table>
 <script type="text/javascript" src="/Appmyphp/Admin/View/Public/js/jquery.min.js"></script>
-<script language="JavaScript">
+<script type="text/javascript">
   function gourl(n,url){
     $('#header-menu a').removeClass('on');
     $('#a_'+n).addClass('on');
   }
+</script>
+<script type="text/javascript">
+  $('#hc').click(function(){
+    if(confirm("确认要清除缓存？")){
+      $.post('/admin.php/Index/cache',function(data){
+        if(data==1){
+          alert("缓存清理成功！");
+        }else{
+          alert("缓存清理失败！");
+        }
+      });
+    }else{
+      return false;
+    }
+  });
 </script>
 </body>
 </html>

@@ -34,4 +34,13 @@ class IndexController extends CommonController {
         $this->assign('user',$user);
         $this->display();
     }
+    //获取要清除的目录和目录所在的绝对路径
+    public function cache(){
+        $rtim = del_dir(APP_PATH.'/Runtime');
+        if($rtim){
+            echo 1;
+        }else{
+            echo 2;
+        }
+    }
 }
