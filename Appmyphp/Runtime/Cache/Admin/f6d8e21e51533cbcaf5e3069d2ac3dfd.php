@@ -10,14 +10,14 @@
 <!--禁止网页另存为-->
 <table width="100%" border="0" cellspacing="0" cellpadding="0" id="header">
   <tr>
-    <td rowspan="2" align="left" valign="top" id="logo"><img src="/Appmyphp/Admin/View/Public/images/main/logo.jpg" width="74" height="64"></td>
+    <td rowspan="2" align="left" valign="top" id="logo"><img src="/Appmyphp/Admin/View/Public/images/main/logo.jpg" width="64" height="64"></td>
     <td align="left" valign="bottom">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td align="left" valign="bottom" id="header-name">烂文开发区</td>
+        <td align="left" valign="bottom" id="header-name">MyWeb</td>
         <td align="right" valign="top" id="header-right">
-        	<a href="/admin.php/Login/logout" target="topFrame" onFocus="this.blur()" class="admin-out">注销</a>
-            <a href="/admin.php/Index/index" target="top" onFocus="this.blur()" class="admin-home">管理首页</a>
+        	<a href="/admin.php/Login/logout" target="top" class="admin-out">注销</a>
+          <a href="/admin.php/Index/index" target="top" class="admin-home">管理首页</a>
         	<a href="/" target="_blank" onFocus="this.blur()" class="admin-index">网站首页</a>
             <span>
 <!-- 日历 -->
@@ -30,21 +30,29 @@
   </tr>
   <tr>
     <td align="left" valign="bottom">
-	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td align="left" valign="top" id="header-admin">后台管理系统</td>
-        <td align="left" valign="bottom" id="header-menu">
-        <a href="index.html" target="left" onFocus="this.blur()" id="menuon">后台首页</a>
-        <a href="index.html" target="left" onFocus="this.blur()">用户管理</a>
-        <a href="index.html" target="left" onFocus="this.blur()">栏目管理</a>
-        <a href="index.html" target="left" onFocus="this.blur()">信息管理</a>
-        <a href="index.html" target="left" onFocus="this.blur()">留言管理</a>
-        <a href="index.html" target="left" onFocus="this.blur()">附件管理</a>
-        <a href="index.html" target="left" onFocus="this.blur()">站点管理</a>
-        </td>
-      </tr>
-    </table></td>
+	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="left" valign="top" id="header-admin">后台管理系统</td>
+          <td align="left" valign="bottom" id="header-menu">
+          <a href="main.html" target="mainFrame"  id="a_0" onFocus="this.blur()" onclick="javascript:gourl('0','main.html')" class="on">后台首页</a>
+          <a href="<?php echo U('Rbac/user');?>" target="mainFrame" id="a_1" onFocus="this.blur()" onclick="javascript:gourl('1','<?php echo U('Rbac/user');?>')">用户管理</a>
+          <a href="<?php echo U('Rbac/role');?>" target="mainFrame" id="a_2" onFocus="this.blur()" onclick="javascript:gourl('2','<?php echo U('Rbac/role');?>')">角色管理</a>
+          <a href="<?php echo U('Rbac/node');?>" target="mainFrame" id="a_3" onFocus="this.blur()" onclick="javascript:gourl('3','<?php echo U('Rbac/node');?>')">节点管理</a>
+          <a href="<?php echo U('Case/index');?>" target="mainFrame" id="a_4" onFocus="this.blur()" onclick="javascript:gourl('4','<?php echo U('Case/index');?>')">案例管理</a>
+          <a href="<?php echo U('Tiezi/index');?>" target="mainFrame" id="a_5" onFocus="this.blur()" onclick="javascript:gourl('5','<?php echo U('Tiezi/index');?>')">帖子管理</a>
+          <a href="<?php echo U('Message/index');?>" target="mainFrame" id="a_6" onFocus="this.blur()" onclick="javascript:gourl('6','<?php echo U('Message/index');?>')">留言管理</a>
+          </td>
+        </tr>
+      </table>
+    </td>
   </tr>
 </table>
+<script type="text/javascript" src="/Appmyphp/Admin/View/Public/js/jquery.min.js"></script>
+<script language="JavaScript">
+  function gourl(n,url){
+    $('#header-menu a').removeClass('on');
+    $('#a_'+n).addClass('on');
+  }
+</script>
 </body>
 </html>

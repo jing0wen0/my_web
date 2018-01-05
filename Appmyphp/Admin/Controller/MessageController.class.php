@@ -15,7 +15,7 @@ class MessageController extends CommonController {
         $this->display(); // 输出模板
     }
 
-    public function save(){
+    public function details(){
         $id = $_GET['id'];
         $Message_model = M('Message');
         $Message_info = $Message_model->find($id);

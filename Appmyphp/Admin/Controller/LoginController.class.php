@@ -37,7 +37,7 @@ class LoginController extends Controller {
                         //将权限写入session
                         $rbac=new \Org\Util\Rbac();  
                         $rbac::saveAccessList();
-                        dump($_SESSION);
+                        //dump($_SESSION);
                         //die();
 
                         //进入后台主页面

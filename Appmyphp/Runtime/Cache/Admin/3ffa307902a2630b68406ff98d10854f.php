@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>网站后台管理系统</title>
+<title>MyWeb后台管理系统</title>
 <link rel="shortcut icon" href="/Appmyphp/Admin/View/Public/images/favicon.ico" />
 <link href="/Appmyphp/Admin/View/Public/css/css.css" type="text/css" rel="stylesheet" />
 </head>

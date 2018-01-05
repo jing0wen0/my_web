@@ -25,64 +25,53 @@ body{overflow-x:hidden; background:#f2f0f5; padding:15px 0px 10px 5px;}
 .borderleft{ border-left:1px solid #ebebeb}
 .gray{ color:#dbdbdb;}
 td.fenye{ padding:10px 0 0 0; text-align:right;}
-.bggray{ background:#f9f9f9; font-size:14px; font-weight:bold; padding:10px 10px 10px 0; width:120px;}
+.bggray{ background:#f9f9f9; font-size:14px; font-weight:bold; padding:10px 10px 10px 0;}
 .main-for{ padding:10px;}
 .main-for input.text-word{ width:310px; height:36px; line-height:36px; border:#ebebeb 1px solid; background:#FFF; font-family:"Microsoft YaHei","Tahoma","Arial",'宋体'; padding:0 10px;}
 .main-for select{ width:310px; height:36px; line-height:36px; border:#ebebeb 1px solid; background:#FFF; font-family:"Microsoft YaHei","Tahoma","Arial",'宋体'; color:#666;}
 .main-for input.text-but{ width:100px; height:40px; line-height:30px; border: 1px solid #cdcdcd; background:#e6e6e6; font-family:"Microsoft YaHei","Tahoma","Arial",'宋体'; color:#969696; float:left; margin:0 10px 0 0; display:inline; cursor:pointer; font-size:14px; font-weight:bold;}
+.main-for .miaoshu{ width:670px; height:80px; border: 1px solid #ebebeb; font-family:"Microsoft YaHei","Tahoma","Arial",'宋体'; padding:10px;}
 #addinfo a{ font-size:14px; font-weight:bold; background:url("/Appmyphp/Admin/View/Public/images/main/addinfoblack.jpg") no-repeat 0 1px; padding:0px 0 0px 20px; line-height:45px;}
 #addinfo a:hover{ background:url("/Appmyphp/Admin/View/Public/images/main/addinfoblue.jpg") no-repeat 0 1px;}
+#image{width:100px; height:36px; line-height:36px; border: 1px solid #cdcdcd; background:#e6e6e6; font-family:"Microsoft YaHei","Tahoma","Arial",'宋体'; color:#969696; margin:0 0 0 10px; display:inline; cursor:pointer; font-size:14px; font-weight:bold;}
+#addinfo a{ font-size:14px; font-weight:bold; background:url("/Appmyphp/Admin/View/Public/images/main/addinfoblack.jpg") no-repeat 0 1px; padding:0px 0 0px 20px; line-height:45px;}
 </style>
 </head>
 <body>
 <!--main_top-->
 <table width="99%" border="0" cellspacing="0" cellpadding="0" id="searchmain">
   <tr>
-    <td width="99%" align="left" valign="top">您的位置：节点管理&nbsp;&nbsp;>&nbsp;&nbsp;添加节点</td>
+    <td width="99%" align="left" valign="top">您的位置：留言管理&nbsp;&nbsp;>&nbsp;&nbsp;留言详情</td>
   </tr>
   <tr>
     <td align="left" valign="top" id="addinfo">
-    <a href="javascript:;" target="mainFrame" onFocus="this.blur()" class="add">添加节点</a>
+    <a href="javascript:history.back(-1)" target="mainFrame" onFocus="this.blur()" class="add">返回</a>
     </td>
   </tr>
   <tr>
     <td align="left" valign="top">
-    <form method="post" action="/admin.php/Rbac/addnode/pid/26/level/3.html">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray"><?php echo ($type); ?>名称：</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" name="name" value="" class="text-word">
-        </td>
+        <td width="10%" align="right" valign="middle" class="borderright borderbottom bggray">留言人：</td>
+        <td width="90%" align="left" valign="middle" class="borderright borderbottom main-for"><?php echo ($show['name']); ?></td>
       </tr>
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray"><?php echo ($type); ?>描述：</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" name="title" value="" class="text-word">
-        </td>
+        <td width="10%" align="right" valign="middle" class="borderright borderbottom bggray">留言人E-mail：</td>
+        <td width="90%" align="left" valign="middle" class="borderright borderbottom main-for"><?php echo ($show['email']); ?></td>
       </tr>
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">是否开启：</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-          <input type="radio" name="status" value="1" checked="checked" />&nbsp;开启&nbsp;&nbsp;&nbsp;<input type="radio" name="status" value="0" />&nbsp;关闭
-        </td>
+        <td width="10%" align="right" valign="middle" class="borderright borderbottom bggray">留言标题：</td>
+        <td width="90%" align="left" valign="middle" class="borderright borderbottom main-for"><?php echo ($show['title']); ?></td>
+      </tr>
+      <tr width="100%" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
+        <td width="10%" align="right" valign="middle" class="borderright borderbottom bggray">留言内容：</td>
+        <td width="90%" align="left" valign="middle" class="borderright borderbottom main-for"><?php echo ($show['content']); ?></td>
       </tr>
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">排序：</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-          <input type="text" name="sort" value="1" class="text-word" />
-        </td>
+        <td align="right" valign="middle" class="borderright borderbottom bggray">留言时间：</td>
+        <td align="left" valign="middle" class="borderright borderbottom main-for"><?php echo (date("Y-m-d H:i:s",$show['time'])); ?></td>
       </tr>
-      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="right" valign="middle" class="borderright borderbottom bggray">&nbsp;</td>
-        <td align="left" valign="middle" class="borderright borderbottom main-for">
-          <input type="hidden" name="pid" value="<?php echo ($pid); ?>" />
-          <input type="hidden" name="level" value="<?php echo ($level); ?>" />
-          <input name="" type="submit" value="提交" class="text-but">
-          <input name="" type="reset" value="重置" class="text-but"></td>
-        </tr>
     </table>
-    </form>
     </td>
     </tr>
 </table>

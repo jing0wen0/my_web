@@ -66,7 +66,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
         <td align="center" valign="middle" class="borderright borderbottom"><?php echo ($vo['name']); ?></td>
         <td align="center" valign="middle" class="borderright borderbottom"><?php echo ($vo['remark']); ?></td>
         <td align="center" valign="middle" class="borderright borderbottom"><?php if($vo['status']): ?>开启<?php else: ?>关闭<?php endif; ?></td>
-        <td align="center" valign="middle" class="borderbottom"><a href="<?php echo U('Admin/Rbac/access',array('rid' => $vo['id']));?>" target="mainFrame" onFocus="this.blur()" class="add">配置权限</a><span class="gray">&nbsp;|&nbsp;</span><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
+        <td align="center" valign="middle" class="borderbottom"><a href="<?php echo U('Admin/Rbac/access',array('rid' => $vo['id']));?>" target="mainFrame" onFocus="this.blur()" class="add">配置权限</a><span class="gray">&nbsp;|&nbsp;</span><a href="<?php echo U('Admin/Rbac/delrole',array('id' => $vo['id']));?>" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
     </table>
     </td>

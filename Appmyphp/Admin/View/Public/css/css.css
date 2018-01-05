@@ -35,7 +35,7 @@ a.black:hover,a.black:active{ font-size:12px; color:#548fc9; font-weight:bold;  
 #header-right a:hover.admin-index{ background:url(../images/main/homeon.jpg) no-repeat 0px -1px;}
 #header-menu a{ width:87px; height:37px; line-height:32px; margin:0 2px 0 0; display:inline; text-align:center; font-size:14px; font-weight:bold; background:url(../images/main/menu.jpg) no-repeat left bottom; float:left}
 #header-menu a:hover{ background:url(../images/main/menuon.jpg) no-repeat left bottom; color:#FFF}
-#header-menu a#menuon{ background:url(../images/main/menuon.jpg) no-repeat left bottom; color:#FFF}
+#header-menu a.on{ background:url(../images/main/menuon.jpg) no-repeat left bottom; color:#FFF}
 /*left*/
 #left-top{background:#538ec6; width:184px; height:67px; padding:7px 0 0 10px; line-height:24px; color:#FFF}
 #left-top div{ width:44px; padding:3px; height:45px; background:url(../images/main/memberbg.jpg) no-repeat left top; float:left}

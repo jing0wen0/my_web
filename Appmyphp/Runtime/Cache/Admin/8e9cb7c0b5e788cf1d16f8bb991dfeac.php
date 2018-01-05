@@ -1,38 +1,43 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>网站后台管理系统</title>
-    <link href="/Appmyphp/Admin/View/Public/css/alogin.css" rel="stylesheet" type="text/css" />
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>MyWeb后台管理系统</title>
+<link rel="stylesheet" type="text/css" href="/Appmyphp/Admin/View/Public/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="/Appmyphp/Admin/View/Public/css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="/Appmyphp/Admin/View/Public/css/component.css" />
+<!--[if IE]>
+<script src="js/html5.js"></script>
+<![endif]-->
 </head>
 <body>
-    <form id="form1" runat="server" action="/admin.php/Login/login" method="post">
-    <div class="Main">
-        <ul>
-            <li class="top"></li>
-            <li class="top2"></li>
-            <li class="topA"></li>
-            <li class="topB"><span><img src="/Appmyphp/Admin/View/Public/images/login/logo.gif" alt="" style="" /></span></li>
-            <li class="topC"></li>
-            <li class="topD">
-                <ul class="login">
-                    <li><span class="left login-text">用户名：</span> <span style="left">
-                        <input id="Text1" type="text" class="txt" name="username"/>
-                    </span></li>
-                    <li><span class="left login-text">密码：</span> <span style="left">
-                       <input id="Text2" type="password" class="txt" name="pwd" />  
-                    </span></li>
-                </ul>
-            </li>
-            <li class="topE"></li>
-            <li class="middle_A"></li>
-            <li class="middle_B"></li>
-            <li class="middle_C"><span class="btn"><input style="border: none; background: url('/Appmyphp/Admin/View/Public/images/login/btnlogin.gif') no-repeat; height: 35px; width: 104px; cursor: pointer;" value="" type="submit"></span></li>
-            <li class="middle_D"></li>
-            <li class="bottom_A"></li>
-            <li class="bottom_B">网站后台管理系统</li>
-        </ul>
-    </div>
-    </form>
+    <div class="container demo-1">
+        <div class="content">
+            <div id="large-header" class="large-header">
+                <canvas id="demo-canvas"></canvas>
+                <div class="logo_box">
+                    <h3>欢迎你</h3>
+                    <form action="/admin.php/Login/login" name="f" method="post">
+                        <div class="input_outer">
+                            <span class="u_user"></span>
+                            <input name="username" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+                        </div>
+                        <div class="input_outer">
+                            <span class="us_uer"></span>
+                            <input name="pwd" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+                        </div>
+                        <div class="mb2"><input type="submit" class="act-but submit" value="登录"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- /container -->
+    <script src="/Appmyphp/Admin/View/Public/js/TweenLite.min.js"></script>
+    <script src="/Appmyphp/Admin/View/Public/js/EasePack.min.js"></script>
+    <script src="/Appmyphp/Admin/View/Public/js/rAF.js"></script>
+    <script src="/Appmyphp/Admin/View/Public/js/demo-1.js"></script>
 </body>
 </html>

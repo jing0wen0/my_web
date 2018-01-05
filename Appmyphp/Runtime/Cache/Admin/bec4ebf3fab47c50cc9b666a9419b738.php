@@ -22,7 +22,7 @@ body{overflow-x:hidden; background:url("/Appmyphp/Admin/View/Public/images/main/
 <body onselectstart="return false;" ondragstart="return false;" oncontextmenu="return false;">
 <div id="left-top">
 	<div><img src="/Appmyphp/Admin/View/Public/images/main/member.gif" width="44" height="44" /></div>
-    <span>用户：<?php echo ($_SESSION["username"]); ?><br>角色：超级管理员</span>
+    <span>用户：<?php echo ($user['username']); ?><br>角色：<?php echo ($user['remark']); ?></span>
 </div>
     <div style="float: left" id="my_menu" class="sdmenu">
       <div class="collapsed">

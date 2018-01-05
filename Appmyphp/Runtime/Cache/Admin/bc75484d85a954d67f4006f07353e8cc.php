@@ -58,12 +58,12 @@ td.fenye a{ padding:0 10px;}
         <th width="15%" align="center" valign="middle" class="borderright">留言时间</th>
         <th width="15%" align="center" valign="middle">操作</th>
       </tr>
-      <?php if(is_array($list)): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><tr <?php if($k%2==0): ?>class="bggray"<?php endif; ?>onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
+      <?php if(is_array($list)): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><tr <?php if($k%2==0): ?>class="bggray"<?php endif; ?> onMouseOut="this.style.backgroundColor='#f9f9f9'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td align="center" valign="middle" class="borderright borderbottom"><?php echo ($vo['id']); ?></td>
         <td align="left" valign="middle" class="borderright borderbottom" style="padding: 0 20px;"><?php echo ($vo['title']); ?></td>
         <td align="center" valign="middle" class="borderright borderbottom"><?php echo ($vo['name']); ?></td>
         <td align="center" valign="middle" class="borderright borderbottom"><?php echo (date("Y-m-d H:i:s",$vo['time'])); ?></td>
-        <td align="center" valign="middle" class="borderbottom"><a href="/admin.php/Message/save/id/<?php echo ($vo['id']); ?>" target="mainFrame" onFocus="this.blur()" class="add">详情</a><span class="gray">&nbsp;|&nbsp;</span><a href="/admin.php/Message/delete/id/<?php echo ($vo['id']); ?>" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
+        <td align="center" valign="middle" class="borderbottom"><a href="/admin.php/Message/details/id/<?php echo ($vo['id']); ?>" target="mainFrame" onFocus="this.blur()" class="add">详情</a><span class="gray">&nbsp;|&nbsp;</span><a href="/admin.php/Message/delete/id/<?php echo ($vo['id']); ?>" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
     </table></td>
     </tr>

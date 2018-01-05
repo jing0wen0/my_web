@@ -112,6 +112,19 @@ class RbacController extends CommonController {
         }
     }
 
+    //删除角色
+    public function delrole(){
+        $id = $_GET['id'];
+        $Role = M("Role");
+        $role = $Role->where(array('id'=>$id))->delete();
+
+        if($role){
+            $this->success("删除成功", U("Rbac/role"));
+        }else{
+            $this->error("删除失败");
+        }
+    }
+
     //节点列表
     public function node(){
         $Node = M("Node");

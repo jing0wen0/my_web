@@ -64,7 +64,7 @@ td.fenye a{ padding:0 10px;}
         <td align="left" valign="middle" class="borderright borderbottom" style="padding: 0 20px;"><{$vo['title']}></td>
         <td align="center" valign="middle" class="borderright borderbottom"><{$vo['name']}></td>
         <td align="center" valign="middle" class="borderright borderbottom"><{$vo['time']|date="Y-m-d H:i:s",###}></td>
-        <td align="center" valign="middle" class="borderbottom"><a href="__URL__/save/id/<{$vo['id']}>" target="mainFrame" onFocus="this.blur()" class="add">详情</a><span class="gray">&nbsp;|&nbsp;</span><a href="__URL__/delete/id/<{$vo['id']}>" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
+        <td align="center" valign="middle" class="borderbottom"><a href="__URL__/details/id/<{$vo['id']}>" target="mainFrame" onFocus="this.blur()" class="add">详情</a><span class="gray">&nbsp;|&nbsp;</span><a href="__URL__/delete/id/<{$vo['id']}>" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
       </tr>
       </volist>
     </table></td>

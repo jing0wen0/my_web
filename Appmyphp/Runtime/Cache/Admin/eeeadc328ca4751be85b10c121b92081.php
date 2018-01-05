@@ -38,46 +38,46 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
 <!--main_top-->
 <table width="99%" border="0" cellspacing="0" cellpadding="0" id="searchmain">
   <tr>
-    <td width="99%" align="left" valign="top">您的位置：节点管理&nbsp;&nbsp;>&nbsp;&nbsp;添加节点</td>
+    <td width="99%" align="left" valign="top">您的位置：节点管理&nbsp;&nbsp;>&nbsp;&nbsp;修改节点</td>
   </tr>
   <tr>
     <td align="left" valign="top" id="addinfo">
-    <a href="javascript:;" target="mainFrame" onFocus="this.blur()" class="add">添加节点</a>
+    <a href="javascript:;" target="mainFrame" onFocus="this.blur()" class="add">修改节点</a>
     </td>
   </tr>
   <tr>
     <td align="left" valign="top">
-    <form method="post" action="/admin.php/Rbac/addnode/pid/26/level/3.html">
+    <form method="post" action="/admin.php/Rbac/savenode/id/15.html">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td align="right" valign="middle" class="borderright borderbottom bggray"><?php echo ($type); ?>名称：</td>
         <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" name="name" value="" class="text-word">
+        <input type="text" name="name" value="<?php echo ($show['name']); ?>" class="text-word">
         </td>
       </tr>
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td align="right" valign="middle" class="borderright borderbottom bggray"><?php echo ($type); ?>描述：</td>
         <td align="left" valign="middle" class="borderright borderbottom main-for">
-        <input type="text" name="title" value="" class="text-word">
+        <input type="text" name="title" value="<?php echo ($show['title']); ?>" class="text-word">
         </td>
       </tr>
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td align="right" valign="middle" class="borderright borderbottom bggray">是否开启：</td>
         <td align="left" valign="middle" class="borderright borderbottom main-for">
-          <input type="radio" name="status" value="1" checked="checked" />&nbsp;开启&nbsp;&nbsp;&nbsp;<input type="radio" name="status" value="0" />&nbsp;关闭
+        <?php if($show['status'] == 1): ?><input type="radio" name="status" value="1" checked="checked" />&nbsp;开启&nbsp;&nbsp;&nbsp;<input type="radio" name="status" value="0" />&nbsp;关闭
+        <?php else: ?>
+          <input type="radio" name="status" value="1" checked="checked" />&nbsp;开启&nbsp;&nbsp;&nbsp;<input type="radio" name="status" value="0" checked="checked" />&nbsp;关闭<?php endif; ?>
         </td>
       </tr>
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td align="right" valign="middle" class="borderright borderbottom bggray">排序：</td>
         <td align="left" valign="middle" class="borderright borderbottom main-for">
-          <input type="text" name="sort" value="1" class="text-word" />
+          <input type="text" name="sort" value="<?php echo ($show['sort']); ?>" class="text-word" />
         </td>
       </tr>
       <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td align="right" valign="middle" class="borderright borderbottom bggray">&nbsp;</td>
         <td align="left" valign="middle" class="borderright borderbottom main-for">
-          <input type="hidden" name="pid" value="<?php echo ($pid); ?>" />
-          <input type="hidden" name="level" value="<?php echo ($level); ?>" />
           <input name="" type="submit" value="提交" class="text-but">
           <input name="" type="reset" value="重置" class="text-but"></td>
         </tr>
