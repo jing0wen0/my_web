@@ -1,0 +1,26 @@
+[ 2018-01-08T17:47:18+08:00 ] 127.0.0.1 /admin.php/Index/cache
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-01-08T17:50:16+08:00 ] 127.0.0.1 /admin.php/Case/__PUBLIC__/css/exception.css
+ERR: 非法操作:__PUBLIC__
+
+[ 2018-01-08T17:51:06+08:00 ] 127.0.0.1 /admin.php/Case/__PUBLIC__/css/exception.css
+ERR: 非法操作:__PUBLIC__
+
+[ 2018-01-08T17:52:01+08:00 ] 127.0.0.1 /admin.php/Case/Appmyphp/Admin/View/Public/css/exception.css
+ERR: 非法操作:Appmyphp
+
+[ 2018-01-08T18:06:55+08:00 ] 127.0.0.1 /admin.php/Public/logout.html
+ERR: 无法加载控制器:Public
+
+[ 2018-01-08T18:06:56+08:00 ] 127.0.0.1 /admin.php/Public/logout.html
+ERR: 无法加载控制器:Public
+
+[ 2018-01-08T18:06:57+08:00 ] 127.0.0.1 /admin.php/Public/logout.html
+ERR: 无法加载控制器:Public
+

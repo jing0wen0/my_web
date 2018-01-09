@@ -17,15 +17,19 @@ class TieziController extends CommonController {
 
     public function add(){
         if(!empty($_POST)){
-            $Tiezi_model = M('Tiezi');
-            $data['title'] = trim($_POST['title']);
-            $data['content'] = $_POST['content'];
-            $data['create_time'] = strtotime($_POST['create_time']);
-            $Tiezi_info = $Tiezi_model->data($data)->add();
-            if($Tiezi_info){
-                $this->success("添加成功", U("Tiezi/index"));
+            if ($_POST['title'] == '' || $_POST['content'] == '') {
+                $this->error("标题或者内容不能为空");
             }else{
-                $this->error("添加失败");
+                $Tiezi_model = M('Tiezi');
+                $data['title'] = trim($_POST['title']);
+                $data['content'] = $_POST['content'];
+                $data['create_time'] = strtotime($_POST['create_time']);
+                $Tiezi_info = $Tiezi_model->data($data)->add();
+                if($Tiezi_info){
+                    $this->success("添加成功", U("Tiezi/index"));
+                }else{
+                    $this->error("添加失败");
+                }
             }
         }else{
             $this->display();
@@ -39,15 +43,19 @@ class TieziController extends CommonController {
         $this->assign('show',$Tiezi_info);
 
         if(!empty($_POST)){
-            $data['id'] = $id;
-            $data['title'] = trim($_POST['title']);
-            $data['content'] = $_POST['content'];
-            $data['create_time'] = strtotime($_POST['create_time']);
-            $Tiezi_info = $Tiezi_model->save($data);
-            if($Tiezi_info){
-                $this->success("修改成功", U("Tiezi/index"));
+            if ($_POST['title'] == '' || $_POST['content'] == '') {
+                $this->error("标题或者内容不能为空");
             }else{
-                $this->error("修改失败");
+                $data['id'] = $id;
+                $data['title'] = trim($_POST['title']);
+                $data['content'] = $_POST['content'];
+                $data['create_time'] = strtotime($_POST['create_time']);
+                $Tiezi_info = $Tiezi_model->save($data);
+                if($Tiezi_info){
+                    $this->success("修改成功", U("Tiezi/index"));
+                }else{
+                    $this->error("修改失败");
+                }
             }
         }else{
             $this->display();

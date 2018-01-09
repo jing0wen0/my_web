@@ -25,6 +25,9 @@ body{overflow-x:hidden; background:#f2f0f5; padding:15px 0px 10px 5px;}
 .borderleft{ border-left:1px solid #ebebeb}
 .gray{ color:#dbdbdb;}
 td.fenye{ padding:10px 0 0 0; text-align:right;}
+.fenye a{ padding:0 5px;}
+.fenye .current{ padding:0 5px; color: #bb1414;}
+#addinfo { padding:0 0 10px 0;}
 .bggray{ background:#f9f9f9}
 </style>
 </head>
@@ -32,22 +35,16 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
 <!--main_top-->
 <table width="99%" border="0" cellspacing="0" cellpadding="0" id="searchmain">
   <tr>
-    <td width="99%" align="left" valign="top">您的位置：用户管理</td>
+    <td width="99%" align="left" valign="top" id="addinfo">您的位置：案例管理</td>
   </tr>
   <tr>
     <td align="left" valign="top">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
-  		<tr>
-   		 <td width="90%" align="left" valign="middle">
-	         <form method="post" action="">
-	         <span>管理员：</span>
-	         <input type="text" name="" value="" class="text-word">
-	         <input name="" type="button" value="查询" class="text-but">
-	         </form>
-         </td>
-  		  <td width="10%" align="center" valign="middle" style="text-align:right; width:150px;"><a href="<?php echo U('Rbac/adduser');?>" target="mainFrame" onFocus="this.blur()" class="add">添加用户</a></td>
-  		</tr>
-	</table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
+        <tr>
+          <td width="90%" align="left" valign="middle">&nbsp;&nbsp;&nbsp;<a href="/admin.php/Case/add" target="mainFrame" onFocus="this.blur()" class="add">添加案例</a></td>
+          <td width="10%" align="center" valign="middle">&nbsp;</td>
+        </tr>
+      </table>
     </td>
   </tr>
   <tr>
@@ -55,23 +52,25 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr>
-        <th align="center" valign="middle" class="borderright">用户ID</th>
-        <th align="center" valign="middle" class="borderright">用户名称</th>
-        <th align="center" valign="middle" class="borderright">所属角色</th>
-        <th align="center" valign="middle" class="borderright">最后登录时间</th>
-        <th align="center" valign="middle" class="borderright">最后登录ip</th>
-        <th align="center" valign="middle">操作</th>
+        <th width="5%" align="center" valign="middle" class="borderright">编号</th>
+        <th width="50%" align="center" valign="middle" class="borderright">标题</th>
+        <th width="10%" align="center" valign="middle" class="borderright">缩略图</th>
+        <th width="10%" align="center" valign="middle" class="borderright">点击次数</th>
+        <th width="15%" align="center" valign="middle" class="borderright">发布时间</th>
+        <th width="10%" align="center" valign="middle">操作</th>
       </tr>
-      <?php if(is_array($user)): $k = 0; $__LIST__ = $user;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><tr <?php if($k%2==0): ?>class="bggray"<?php endif; ?> onMouseOut="this.style.backgroundColor='#f9f9f9'" onMouseOver="this.style.backgroundColor='#edf5ff'">
+      <?php if(is_array($list)): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><tr <?php if($k%2==0): ?>class="bggray"<?php endif; ?> onMouseOut="this.style.backgroundColor='#f9f9f9'" onMouseOver="this.style.backgroundColor='#edf5ff'">
         <td align="center" valign="middle" class="borderright borderbottom"><?php echo ($vo['id']); ?></td>
-        <td align="center" valign="middle" class="borderright borderbottom"><?php echo ($vo['username']); ?></td>
-        <td align="center" valign="middle" class="borderright borderbottom"><?php echo ($vo['remark']); ?></td>
-        <td align="center" valign="middle" class="borderright borderbottom"><?php echo (date("Y-m-d H:i:s",$vo['last_logintime'])); ?></td>
-        <td align="center" valign="middle" class="borderright borderbottom"><?php echo ($vo['last_ip']); ?></td>
-        <td align="center" valign="middle" class="borderbottom"><a href="<?php echo U('Admin/Rbac/saveuser',array('id' => $vo['id']));?>" target="mainFrame" onFocus="this.blur()" class="add">修改</a><span class="gray"><?php if($vo['username'] != C('RBAC_SUPERADMIN')): ?>&nbsp;|&nbsp;</span><a href="<?php echo U('Admin/Rbac/deluser',array('id' => $vo['id']));?>" target="mainFrame" onFocus="this.blur()" class="add">删除</a><?php endif; ?></td>
+        <td align="left" valign="middle" class="borderright borderbottom" style="padding: 0 20px;"><?php echo ($vo['title']); ?></td>
+        <td align="center" valign="middle" class="borderright borderbottom"><?php if($vo['thumb'] != ''): ?><img src="/Appmyphp/Admin/View/Public/images/main/image.gif" ><?php endif; ?></td>
+        <td align="center" valign="middle" class="borderright borderbottom"><?php echo ($vo['hits']); ?></td>
+        <td align="center" valign="middle" class="borderright borderbottom"><?php echo (date("Y-m-d H:i:s",$vo['create_time'])); ?></td>
+        <td align="center" valign="middle" class="borderbottom"><a href="/admin.php/Case/save/id/<?php echo ($vo['id']); ?>" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span><a href="/admin.php/Case/delete/id/<?php echo ($vo['id']); ?>" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-    </table>
-    </td>
+    </table></td>
+    </tr>
+  <tr>
+    <td align="left" valign="top" class="fenye"><?php echo ($page); ?></td>
   </tr>
 </table>
 </body>

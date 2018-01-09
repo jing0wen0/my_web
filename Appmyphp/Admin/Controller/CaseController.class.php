@@ -17,17 +17,21 @@ class CaseController extends CommonController {
 
     public function add(){
         if(!empty($_POST)){
-            $Case_model = M('Case');
-            $data['title'] = trim($_POST['title']);
-            $data['description'] = trim($_POST['description']);
-            $data['content'] = $_POST['content'];
-            $data['create_time'] = strtotime($_POST['create_time']);
-            $data['thumb'] = $_POST['thumb'];
-            $Case_info = $Case_model->data($data)->add();
-            if($Case_info){
-                $this->success("添加成功", U("Case/index"));
+            if ($_POST['title'] == '' || $_POST['content'] == '') {
+                $this->error("标题或者内容不能为空");
             }else{
-                $this->error("添加失败");
+                $Case_model = M('Case');
+                $data['title'] = trim($_POST['title']);
+                $data['description'] = trim($_POST['description']);
+                $data['content'] = $_POST['content'];
+                $data['create_time'] = strtotime($_POST['create_time']);
+                $data['thumb'] = $_POST['thumb'];
+                $Case_info = $Case_model->data($data)->add();
+                if($Case_info){
+                    $this->success("添加成功", U("Case/index"));
+                }else{
+                    $this->error("添加失败");
+                }
             }
         }else{
             $this->display();
@@ -41,17 +45,21 @@ class CaseController extends CommonController {
         $this->assign('show',$Case_info);
 
         if(!empty($_POST)){
-            $data['id'] = $id;
-            $data['title'] = trim($_POST['title']);
-            $data['description'] = trim($_POST['description']);
-            $data['content'] = $_POST['content'];
-            $data['create_time'] = strtotime($_POST['create_time']);
-            $data['thumb'] = $_POST['thumb'];
-            $Case_info = $Case_model->save($data);
-            if($Case_info){
-                $this->success("修改成功", U("Case/index"));
+            if ($_POST['title'] == '' || $_POST['content'] == '') {
+                $this->error("标题或者内容不能为空");
             }else{
-                $this->error("修改失败");
+                $data['id'] = $id;
+                $data['title'] = trim($_POST['title']);
+                $data['description'] = trim($_POST['description']);
+                $data['content'] = $_POST['content'];
+                $data['create_time'] = strtotime($_POST['create_time']);
+                $data['thumb'] = $_POST['thumb'];
+                $Case_info = $Case_model->save($data);
+                if($Case_info){
+                    $this->success("修改成功", U("Case/index"));
+                }else{
+                    $this->error("修改失败");
+                }
             }
         }else{
             $this->display();

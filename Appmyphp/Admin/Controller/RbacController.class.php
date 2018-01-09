@@ -18,23 +18,27 @@ class RbacController extends CommonController {
         $this->assign('role',$role);
 
         if (!empty($_POST)) {
-            //用户信息
-            $user =array(
-                'username' => I('username'),
-                'pwd' => I('pwd','','md5'),
-                'last_logintime' => time(),
-                'last_ip' => get_client_ip()
-            );
-            if ($uid = M("Admin")->add($user)) {
-                //角色信息
-                $role = array(
-                    'role_id' => I('role_id'),
-                    'user_id' => $uid
-                );
-                M('Role_user')->add($role);
-                $this->success('添加成功',U('Rbac/user'));
+            if ($_POST['username'] == '' || $_POST['pwd'] == '') {
+                $this->error("用户名称或用户密码不能为空");
             }else{
-                $this->error('添加失败');
+                //用户信息
+                $user =array(
+                    'username' => I('username'),
+                    'pwd' => I('pwd','','md5'),
+                    'last_logintime' => time(),
+                    'last_ip' => get_client_ip()
+                );
+                if ($uid = M("Admin")->add($user)) {
+                    //角色信息
+                    $role = array(
+                        'role_id' => I('role_id'),
+                        'user_id' => $uid
+                    );
+                    M('Role_user')->add($role);
+                    $this->success('添加成功',U('Rbac/user'));
+                }else{
+                    $this->error('添加失败');
+                }
             }
         }else{
             $this->display();
@@ -99,13 +103,17 @@ class RbacController extends CommonController {
     //添加角色
     public function addrole(){
         if(!empty($_POST)){
-            $Role = M("Role");
-            $Role->create();
-            $role = $Role->add();
-            if($role){
-                $this->success("添加成功", U("Rbac/role"));
+            if ($_POST['name'] == '' || $_POST['remark'] == '') {
+                $this->error("角色名称或角色描述不能为空");
             }else{
-                $this->error("添加失败");
+                $Role = M("Role");
+                $Role->create();
+                $role = $Role->add();
+                if($role){
+                    $this->success("添加成功", U("Rbac/role"));
+                }else{
+                    $this->error("添加失败");
+                }
             }
         }else{
             $this->display();
@@ -138,13 +146,17 @@ class RbacController extends CommonController {
     //添加节点
     public function addnode(){
         if(!empty($_POST)){
-            $Node = M("Node");
-            $Node->create();
-            $node = $Node->add();
-            if($node){
-                $this->success("添加成功", U("Rbac/node"));
+            if ($_POST['name'] == '' || $_POST['title'] == '') {
+                $this->error("名称或标题不能为空");
             }else{
-                $this->error("添加失败");
+                $Node = M("Node");
+                $Node->create();
+                $node = $Node->add();
+                if($node){
+                    $this->success("添加成功", U("Rbac/node"));
+                }else{
+                    $this->error("添加失败");
+                }
             }
         }else{
             $this->pid = I('pid',0,'intval');
