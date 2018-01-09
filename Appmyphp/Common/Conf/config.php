@@ -20,5 +20,5 @@ return array(
     //修改模板文件后缀名
     'TMPL_TEMPLATE_SUFFIX' => '.html',
 
-    'SHOW_PAGE_TRACE'=>true,//是否开启调试模式    
+    //'SHOW_PAGE_TRACE'=>true,//是否开启调试模式    
 );
