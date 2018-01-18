@@ -77,7 +77,7 @@
 						<ul class="tiezi_con">
 							<volist name="tiezi_list" id="vo">
 							<li class="tiezi_list">
-								<div class="tiezi_list_l"><a href="__APP__/Tiezi/tiezi_show/id/<{$vo['id']}>" title="<{$vo['title']}>"><{$vo['title']}></a></div>
+								<div class="tiezi_list_l"><a href="<{:U('tiezi/tiezi_show','id='.$vo['id'])}>" title="<{$vo['title']}>"><{$vo['title']}></a></div>
 								<div class="tiezi_list_r">
 									<span class="r_ll">浏览：<{$vo['hits']}></span>
 									<span><{$vo['create_time']|date="Y-m-d",###}></span>

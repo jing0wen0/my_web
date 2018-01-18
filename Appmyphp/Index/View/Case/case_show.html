@@ -85,8 +85,8 @@
 								<volist name="case_rm" id="vo">
 								<div class="col-md-4">
 									<div class="wrap-col">
-										<a href="__APP__/Case/case_show/id/<{$vo['id']}>"><img src="<{$vo['thumb']}>" /></a>
-										<h4><a href="__APP__/Case/case_show/id/<{$vo['id']}>"><{$vo['title']}></a></h4>
+										<a href="<{:U('case/case_show','id='.$vo['id'])}>"><img src="<{$vo['thumb']}>" alt="<{$vo.title}>" /></a>
+										<h4><a href="<{:U('case/case_show','id='.$vo['id'])}>"><{$vo['title']}></a></h4>
 									</div>
 								</div>
 								</volist>

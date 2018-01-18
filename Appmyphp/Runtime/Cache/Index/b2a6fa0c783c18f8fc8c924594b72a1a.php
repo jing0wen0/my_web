@@ -7,7 +7,7 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 
-	<title>MyWeb</title>
+	<title>帖子-MyWeb</title>
   
 	<!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/Public/css/bootstrap.min.css"  type="text/css">
@@ -32,9 +32,9 @@
 	
 </head>
 
- <body class="index-page">
+<body class="sub-page">
 
- 		<!-- /////////////////////////////////////////Navigation -->
+		<!-- /////////////////////////////////////////Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -74,55 +74,24 @@
     </nav>
 	<!-- Navigation -->
 
-	<!-- CAROUSEL -->
-	<div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel" data-interval="4000">
-		<!-- Wrapper for slides -->
-		<div class="carousel-inner">
-			<div class="item active">
-				<img src="/Public/images/banner1.jpg" alt="...">
-				<!-- Static Header -->
-				<div class="container">
-				<div class="header-text hidden-xs">
-					<div class="col-md-12 text-center">
-						<h1>全站风格创意</h1>
-						<hr>
-						<p>MyWeb作为网站建设行业的领头者，专注与网站建设、网站制作、网站定制开发,拥有丰富的网站建设经验,凭着过硬的实力和服务赢得了广大客户的一致好评.</p>
-						<a href="" class="btn btn-primary btn-xl page-scroll">了解更多</a>
-					</div>
-				</div><!-- /header-text -->
-				</div>
-			</div>
-			<div class="item">
-				<img src="/Public/images/banner2.jpg" alt="...">
-				<!-- Static Header -->
-				<div class="header-text hidden-xs">
-					<div class="col-md-12 text-center">
-						<h1>全站网页静态化技术设计</h1>
-						<hr>
-						<p>网站建设皆倾向把动态网页静态化，之后提交百度谷歌等搜索引擎最佳化，即网站优化俗称“伪静态”。</p>
-						<a href="" class="btn btn-primary btn-xl page-scroll">了解更多</a>
-					</div>
-				</div><!-- /header-text -->
-			</div>
-			
+	<!-- Background Gradients-->
+	<div  class="site-gradients">
+		<div class="site-gradients-media">
+			<figure>
+				<img src="/Public/images/figure1920.jpg" alt="" srcset="/Public/images/figure1920.jpg 1920w, /Public/images/figure420.jpg 420w, /Public/images/figure774.jpg 744w, /Public/images/figure1200.jpg 1200w" sizes="(max-width: 1617px) 100vw, 1617px" height="1080" width="1617">
+			</figure>
 		</div>
-		<!-- Controls -->
-		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-		</a>
-		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right"></span>
-		</a>
-	</div> <!-- Carousel -->
+	</div>
+	
 	
 	<header class="container">
 		<div class="site-branding">
 			<h1 class="site-title">
-				<a href="index.html">
-					<span>case</span>
+				<a href="javascript:;">
+					<span>post</span>
 				</a>
 			</h1>
-			<h2 class="site-description">案例</h2>
+			<h2 class="site-description">帖子</h2>
 		</div>
 		<div class="social-links">
 			<ul class="list-inline">
@@ -134,30 +103,30 @@
 			</ul>
 		</div>
 	</header>
-
+	
 	<!-- /////////////////////////////////////////Content -->
 	<div id="page-content">
 	
-		<!-- ////////////Content Box 01 -->
+		<div id="page-content">
 		<section class="box-content box-1">
 			<div class="container">
 				<div class="row">
-					<?php if(is_array($case_list)): $i = 0; $__LIST__ = array_slice($case_list,0,3,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="col-md-4">
-						<div class="box-item">
-							<img src="<?php echo ($vo['thumb']); ?>" class="img-responsive" alt="<?php echo ($vo["title"]); ?>" />
-							<div class="content">
-								<h3><?php echo (mb_substr($vo["title"],0,12,'utf-8')); ?></h3>
-								<p><?php echo (mb_substr($vo['description'],0,60,'utf-8')); ?></p>
-								<a href="<?php echo U('case/case_show','id='.$vo['id']);?>">阅读更多...</a>
-								<br><br>
-								<span><?php echo (date("Y-m-d H:i:s",$vo['create_time'])); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览：<?php echo ($vo['hits']); ?></span><br>
-							</div>
-						</div>
-					</div><?php endforeach; endif; else: echo "" ;endif; ?>
+					<div class="tiezi">
+						<ul class="tiezi_con">
+							<?php if(is_array($tiezi_list)): $i = 0; $__LIST__ = $tiezi_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="tiezi_list">
+								<div class="tiezi_list_l"><a href="<?php echo U('tiezi/tiezi_show','id='.$vo['id']);?>" title="<?php echo ($vo['title']); ?>"><?php echo ($vo['title']); ?></a></div>
+								<div class="tiezi_list_r">
+									<span class="r_ll">浏览：<?php echo ($vo['hits']); ?></span>
+									<span><?php echo (date("Y-m-d",$vo['create_time'])); ?></span>
+								</div>
+							</li><?php endforeach; endif; else: echo "" ;endif; ?>
+						</ul>
+					</div>
 				</div>
-				<div class="guanggao_sy"><a href="" title="广告位招租" target="_blank"><img src="/Public/images/gg.jpg"></a></div>
+				<div id="pages"><?php echo ($page); ?></div>
 			</div>
 		</section>
+		</div>
 	</div>
 
 	<!-- FOOTER -->

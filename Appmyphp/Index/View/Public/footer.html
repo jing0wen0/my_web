@@ -17,7 +17,7 @@
                     <h2 class="footer-title">热门帖子</h2>
                     <ul>
                         <volist name="tiezi_list" id="vo">
-                        <li><a href="__APP__/Tiezi/tiezi_show/id/<{$vo['id']}>"><{$vo['title']}></a></li>
+                        <li><a href="<{:U('tiezi/tiezi_show','id='.$vo['id'])}>"><{$vo['title']}></a></li>
                         </volist>
                     </ul>
                 </div>

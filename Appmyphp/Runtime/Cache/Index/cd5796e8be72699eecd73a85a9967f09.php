@@ -7,7 +7,7 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 
-	<title>MyWeb</title>
+	<title><?php echo ($show['title']); ?>-MyWeb</title>
   
 	<!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/Public/css/bootstrap.min.css"  type="text/css">
@@ -32,9 +32,9 @@
 	
 </head>
 
- <body class="index-page">
+<body class="sub-page">	
 
- 		<!-- /////////////////////////////////////////Navigation -->
+		<!-- /////////////////////////////////////////Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -73,52 +73,20 @@
         <!-- /.container-fluid -->
     </nav>
 	<!-- Navigation -->
-
-	<!-- CAROUSEL -->
-	<div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel" data-interval="4000">
-		<!-- Wrapper for slides -->
-		<div class="carousel-inner">
-			<div class="item active">
-				<img src="/Public/images/banner1.jpg" alt="...">
-				<!-- Static Header -->
-				<div class="container">
-				<div class="header-text hidden-xs">
-					<div class="col-md-12 text-center">
-						<h1>全站风格创意</h1>
-						<hr>
-						<p>MyWeb作为网站建设行业的领头者，专注与网站建设、网站制作、网站定制开发,拥有丰富的网站建设经验,凭着过硬的实力和服务赢得了广大客户的一致好评.</p>
-						<a href="" class="btn btn-primary btn-xl page-scroll">了解更多</a>
-					</div>
-				</div><!-- /header-text -->
-				</div>
-			</div>
-			<div class="item">
-				<img src="/Public/images/banner2.jpg" alt="...">
-				<!-- Static Header -->
-				<div class="header-text hidden-xs">
-					<div class="col-md-12 text-center">
-						<h1>全站网页静态化技术设计</h1>
-						<hr>
-						<p>网站建设皆倾向把动态网页静态化，之后提交百度谷歌等搜索引擎最佳化，即网站优化俗称“伪静态”。</p>
-						<a href="" class="btn btn-primary btn-xl page-scroll">了解更多</a>
-					</div>
-				</div><!-- /header-text -->
-			</div>
-			
-		</div>
-		<!-- Controls -->
-		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-		</a>
-		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right"></span>
-		</a>
-	</div> <!-- Carousel -->
 	
+	<!-- Background Gradients-->
+	<div  class="site-gradients">
+		<div class="site-gradients-media">
+			<figure>
+				<img src="/Public/images/figure1920.jpg" alt="" srcset="/Public/images/figure1920.jpg 1920w, /Public/images/figure420.jpg 420w, /Public/images/figure774.jpg 744w, /Public/images/figure1200.jpg 1200w" sizes="(max-width: 1617px) 100vw, 1617px" height="1080" width="1617">
+			</figure>
+		</div>
+	</div>
+
 	<header class="container">
 		<div class="site-branding">
 			<h1 class="site-title">
-				<a href="index.html">
+				<a href="javascript:;">
 					<span>case</span>
 				</a>
 			</h1>
@@ -134,30 +102,38 @@
 			</ul>
 		</div>
 	</header>
-
-	<!-- /////////////////////////////////////////Content -->
-	<div id="page-content">
 	
-		<!-- ////////////Content Box 01 -->
-		<section class="box-content box-1">
-			<div class="container">
-				<div class="row">
-					<?php if(is_array($case_list)): $i = 0; $__LIST__ = array_slice($case_list,0,3,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="col-md-4">
-						<div class="box-item">
-							<img src="<?php echo ($vo['thumb']); ?>" class="img-responsive" alt="<?php echo ($vo["title"]); ?>" />
-							<div class="content">
-								<h3><?php echo (mb_substr($vo["title"],0,12,'utf-8')); ?></h3>
-								<p><?php echo (mb_substr($vo['description'],0,60,'utf-8')); ?></p>
-								<a href="<?php echo U('case/case_show','id='.$vo['id']);?>">阅读更多...</a>
-								<br><br>
-								<span><?php echo (date("Y-m-d H:i:s",$vo['create_time'])); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览：<?php echo ($vo['hits']); ?></span><br>
+	<!-- /////////////////////////////////////////Content -->
+	<div id="page-content" class="single-page">
+		<div class="container">
+			<div class="row">
+				<div id="main-content">
+					<article>
+						<img src="<?php echo ($show['thumb']); ?>" />
+						<div class="art-content">
+							<h1><?php echo ($show['title']); ?></h1>
+							<div class="info">发布时间：<?php echo (date("Y-m-d H:i:s",$show['create_time'])); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览：<?php echo ($show['hits']+1); ?></div>
+							<div class="excerpt"><p>&nbsp;</p><p><?php echo ($show['content']); ?></p></div>
+						</div>
+					</article>
+					<div class="widget wid-related">
+						<div class="heading"><h4>热门案例</h4></div>
+						<div class="content">
+							<div class="row">
+								<?php if(is_array($case_rm)): $i = 0; $__LIST__ = $case_rm;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="col-md-4">
+									<div class="wrap-col">
+										<a href="<?php echo U('case/case_show','id='.$vo['id']);?>"><img src="<?php echo ($vo['thumb']); ?>" /></a>
+										<h4><a href="<?php echo U('case/case_show','id='.$vo['id']);?>"><?php echo ($vo['title']); ?></a></h4>
+									</div>
+								</div><?php endforeach; endif; else: echo "" ;endif; ?>
 							</div>
 						</div>
-					</div><?php endforeach; endif; else: echo "" ;endif; ?>
+					</div>
+					<div class="guanggao"><a href="" title="广告位招租" target="_blank"><img src="/Public/images/gg.jpg"></a></div>
 				</div>
-				<div class="guanggao_sy"><a href="" title="广告位招租" target="_blank"><img src="/Public/images/gg.jpg"></a></div>
 			</div>
-		</section>
+		</div>
+		
 	</div>
 
 	<!-- FOOTER -->

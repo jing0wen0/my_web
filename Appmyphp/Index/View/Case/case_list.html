@@ -80,7 +80,7 @@
 							<div class="content">
 								<h3><{$vo.title|mb_substr=###,0,12,'utf-8'}></h3>
 								<p><{$vo['description']|mb_substr=###,0,60,'utf-8'}></p>
-								<a href="__APP__/Case/case_show/id/<{$vo['id']}>">阅读更多...</a>
+								<a href="<{:U('case/case_show','id='.$vo['id'])}>">阅读更多...</a>
 								<br><br>
 								<span><{$vo['create_time']|date="Y-m-d H:i:s",###}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浏览：<{$vo['hits']}></span><br>
 							</div>
