@@ -18,5 +18,5 @@ return array(
     'DB_PORT'   => 3306, // 端口
     'DB_PREFIX' => 'my_', // 数据库表前缀
 
-    //'SHOW_PAGE_TRACE'=>true,//是否开启调试模式    
+    //'SHOW_PAGE_TRACE'=>true,//是否显示页面Trace信息    
 );

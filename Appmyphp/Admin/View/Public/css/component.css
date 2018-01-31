@@ -66,6 +66,16 @@
 	position: absolute;
 	margin: 10px 13px;
 }
+.us_code{
+	width: 25px;
+	height: 25px;
+	background-image: url('../images/login_ico.png');
+	background-position: -125px -65px;
+	position: absolute;
+	margin: 10px 13px;
+}
+.code{display: inline-block;position: absolute;right: 18px;top: 3px;}
+.code img{height: 36px;}
 .l-login{
 	position: absolute;
 	z-index: 1;

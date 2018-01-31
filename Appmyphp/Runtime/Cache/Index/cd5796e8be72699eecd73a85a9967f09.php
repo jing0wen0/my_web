@@ -122,7 +122,7 @@
 							<div class="row">
 								<?php if(is_array($case_rm)): $i = 0; $__LIST__ = $case_rm;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="col-md-4">
 									<div class="wrap-col">
-										<a href="<?php echo U('case/case_show','id='.$vo['id']);?>"><img src="<?php echo ($vo['thumb']); ?>" /></a>
+										<a href="<?php echo U('case/case_show','id='.$vo['id']);?>"><img src="<?php echo ($vo['thumb']); ?>" alt="<?php echo ($vo["title"]); ?>" /></a>
 										<h4><a href="<?php echo U('case/case_show','id='.$vo['id']);?>"><?php echo ($vo['title']); ?></a></h4>
 									</div>
 								</div><?php endforeach; endif; else: echo "" ;endif; ?>

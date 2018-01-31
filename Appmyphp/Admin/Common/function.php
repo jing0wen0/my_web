@@ -21,4 +21,12 @@ function node_merge($node, $access = null, $pid = 0){
 	return $arr;
 }
 
+/*
+	验证码检测
+*/
+function check_code($code, $id = ""){  
+    $verify = new \Think\Verify();  
+    return $verify->check($code, $id);  
+}
+
 ?>

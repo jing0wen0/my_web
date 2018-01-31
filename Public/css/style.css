@@ -285,6 +285,10 @@ article .art-content{padding: 50px;}
 /* ----------------------------------Footer------------------------------------ */
 /* ---------------------------------------------------------------------------- */
 footer{color: #444;font-size: 13px;}
+.bottom_tools{position:fixed;z-index:1070;right:40px;bottom:40px;}
+.bottom_tools>*{font:0/0 a;display:block;margin-top:5px;color:transparent;border:0;background-color:transparent;text-shadow:none}
+#scrollUp{width:45px;height:45px;background-image:url(../images/top.png);display:none;}
+#scrollUp:hover{background-image:url(../images/top.png);background-position:-46px 0px}
 footer ul {padding: 0;margin-top: 10px;}
 footer ul li{list-style: none;}
 footer a {color: #444;}

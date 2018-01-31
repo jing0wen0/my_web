@@ -22,7 +22,7 @@ class RbacController extends CommonController {
                 $this->error("用户名称或用户密码不能为空");
             }else{
                 //用户信息
-                $user =array(
+                $user = array(
                     'username' => I('username'),
                     'pwd' => I('pwd','','md5'),
                     'last_logintime' => time(),
@@ -58,7 +58,7 @@ class RbacController extends CommonController {
 
         if (!empty($_POST)) {
             //修改用户信息
-            $user =array(
+            $user = array(
                 'username' => I('username'),
                 'pwd' => I('pwd','','md5')
             );
@@ -260,6 +260,5 @@ class RbacController extends CommonController {
         }else{
             $this->error('修改失败');
         }
-
     }
 }

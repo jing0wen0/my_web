@@ -132,6 +132,11 @@
 
 	<!-- FOOTER -->
 <footer>
+    <script type="text/javascript" src="/Public/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/Public/js/zzsc.js"></script>
+    <div class="bottom_tools">
+        <a id="scrollUp" href="javascript:;" title="飞回顶部"></a>
+    </div>
     <div class="wrap-footer">
         <div class="container">
             <div class="row">
@@ -194,7 +199,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <p>Copyright @2017 - MyWeb 版权所有</p>
+                    <p>Copyright @2018 - MyWeb 版权所有</p>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">

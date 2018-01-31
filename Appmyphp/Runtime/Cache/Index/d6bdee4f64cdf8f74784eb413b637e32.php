@@ -121,7 +121,7 @@
 							<div class="row">
 								<?php if(is_array($case_rm)): $i = 0; $__LIST__ = $case_rm;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="col-md-4">
 									<div class="wrap-col">
-										<a href="<?php echo U('case/case_show','id='.$vo['id']);?>" title="<?php echo ($vo['title']); ?>"><img src="<?php echo ($vo['thumb']); ?>" /></a>
+										<a href="<?php echo U('case/case_show','id='.$vo['id']);?>" title="<?php echo ($vo['title']); ?>"><img src="<?php echo ($vo['thumb']); ?>" alt="<?php echo ($vo["title"]); ?>" /></a>
 										<h4><a href="<?php echo U('case/case_show','id='.$vo['id']);?>"><?php echo ($vo['title']); ?></a></h4>
 									</div>
 								</div><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -153,7 +153,7 @@
                 <div class="col-footer col-md-3 widget_recent_entries">
                     <h2 class="footer-title">热门帖子</h2>
                     <ul>
-                        <?php if(is_array($tiezi_list)): $i = 0; $__LIST__ = $tiezi_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="/tiezi/tiezi_show/id/<?php echo ($vo['id']); ?>"><?php echo ($vo['title']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                        <?php if(is_array($tiezi_list)): $i = 0; $__LIST__ = $tiezi_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('tiezi/tiezi_show','id='.$vo['id']);?>"><?php echo ($vo['title']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
                 </div>
                 <div class="col-footer col-md-3">
@@ -199,7 +199,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <p>Copyright @2017 - MyWeb 版权所有</p>
+                    <p>Copyright @2018 - MyWeb 版权所有</p>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
